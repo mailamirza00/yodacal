@@ -5,21 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yodacal - Diet Planner | Calorie Needs</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="stylesheet.css">   <!-- Your main site CSS (merged version) -->
-    <link rel="stylesheet" href="dietplan.css">     <!-- Page-specific styles -->
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="dietplan.css">
 </head>
 <body>
-
     <!-- NAVBAR -->
     <nav class="navbar">
         <div class="logo-container">
             <img src="logo.png" alt="yodacal Logo" class="logo">
             <div class="logo-text">yodacal</div>
         </div>
-        <ul id="nav-links" class="nav-links">
+        <ul class="nav-links">
             <li><a href="homepage.html">Home</a></li>
-            <li><a href="dietplanpage.html" class="active">Diet Plans</a></li>
-            <li><a href="#">Success Stories</a></li>
+            <li><a href="caloriecalculator.html" class="active">Calorie Calculator</a></li>
+            <li><a href="successstories.html">Success Stories</a></li>
             <li><a href="aboutuspage.html">About Us</a></li>
             <li><a href="contactuspage.html">Contact Us</a></li>
         </ul>
@@ -30,6 +29,12 @@
 
     <main>
         <div class="container">
+            <!-- UNITS TOGGLE -->
+            <div class="units-toggle" style="text-align: center; margin-bottom: 2rem;">
+                <button id="metric-btn" class="unit-btn active">Metric (kg/cm)</button>
+                <button id="imperial-btn" class="unit-btn">Imperial (lbs/ft)</button>
+            </div>
+
             <div class="page-header">
                 <h1>Calculate Your Daily Calorie Goal</h1>
                 <p>Accurate estimates using Mifflin-St Jeor or Katch-McArdle formulas</p>
@@ -53,18 +58,35 @@
                                 <option value="female">Female</option>
                             </select>
                         </div>
+
                         <div class="form-group">
                             <label for="age">Age (years)</label>
                             <input type="number" id="age" value="30" min="15" class="form-input" required>
                         </div>
+
+                        <!-- WEIGHT FIELD -->
                         <div class="form-group">
-                            <label for="weight">Weight (kg)</label>
+                            <label for="weight">
+                                Weight <span class="unit-label" id="weight-unit">(kg)</span>
+                            </label>
                             <input type="number" id="weight" value="70" min="1" step="0.1" class="form-input" required>
                         </div>
+
+                        <!-- HEIGHT FIELD -->
                         <div class="form-group">
-                            <label for="height">Height (cm)</label>
-                            <input type="number" id="height" value="175" min="1" class="form-input" required>
+                            <label for="height">
+                                Height <span class="unit-label" id="height-unit">(cm)</span>
+                            </label>
+                            <div class="height-input-wrapper" id="height-wrapper">
+                                <input type="number" id="height" value="175" min="1" class="form-input height-input" required>
+                            </div>
+                            <!-- Imperial height fields (hidden by default) -->
+                            <div class="height-input-wrapper" id="height-ft-in" style="display: none;">
+                                <input type="number" id="height-feet" min="1" max="8" class="form-input height-input" placeholder="ft" style="width: 60px; margin-right: 8px;">
+                                <input type="number" id="height-inches" min="0" max="11" class="form-input height-input" placeholder="in" style="width: 60px;">
+                            </div>
                         </div>
+
                         <div class="form-group">
                             <label for="bodyFat">Body Fat % (optional)</label>
                             <input type="number" id="bodyFat" placeholder="e.g. 18" min="5" max="60" step="1" class="form-input">
@@ -118,7 +140,6 @@
                         <p><span id="bmr-text">BMR: 0 kcal</span> • <span id="multiplier-text">Activity: 0</span></p>
                     </div>
                 </div>
-
                 <div class="disclaimer">
                     Disclaimer: These are estimates based on standard equations. Not medical advice.
                 </div>
@@ -130,7 +151,6 @@
         <p>© 2025 yodacal. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript -->
     <script src="javascript.js"></script>
 </body>
 </html>
