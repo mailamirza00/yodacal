@@ -1,25 +1,26 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>yodacal - Diet PLanner</title>
+    <title>yodacal - Eat Smart. Live Better.</title>
     <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
         <div class="logo-container">
-            <img src="logo.png" alt="Fitnest Logo" class="logo">
-            <div class="logo-container">yodacal</div>
+            <img src="logo.png" alt="yodacal Logo" class="logo">
+            <div>yodacal</div>
         </div>
-        <ul class="nav-links">
-            <li><a href="homepage.html">Home</a></li>
-            <li><a href="dietplanpage.html">Calorie Calculator</a></li>
-            <li><a href="#">Success Stories</a></li>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="homepage.html" class="active">Home</a></li>
+            <li><a href="caloriecalculator.html">Calorie Calculator</a></li>
+            <li><a href="successstories.html">Success Stories</a></li>
             <li><a href="aboutuspage.html">About Us</a></li>
             <li><a href="contactuspage.html">Contact Us</a></li>
         </ul>
-        <div class="hamburger">
+        <div class="hamburger" id="hamburger">
             <span></span>
             <span></span>
             <span></span>
@@ -29,7 +30,9 @@
         <div class="hero-content">
             <h1>Eat Smart. Live Better.</h1>
             <p>Personalized nutrition plans tailored to your unique lifestyle and goals.</p>
-            <button class="cta-button">Start Your Journey</button>
+            <button class="cta-button">
+                <a href="caloriecalculator.html" style="color: var(--white) !important; text-decoration: none;">Start Your Journey</a>
+            </button>
         </div>
     </header>
     <section class="features">
